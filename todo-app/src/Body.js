@@ -13,7 +13,7 @@ function Body({todo}) {
                 <ArrowForwardIcon style={{color:'black'}} />
                
             </ListItemAvatar>
-            <ListItemText style={{fontWeight:'bold'}} primary={todo} secondary={date.getHours().getMinutes().getSeconds()} />
+            <ListItemText style={{fontWeight:'bold'}} primary={todo} />
             </ListItem>
             <DeleteIcon/>
         </List>
