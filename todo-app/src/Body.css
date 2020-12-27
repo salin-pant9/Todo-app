@@ -1,0 +1,28 @@
+.body__todo {
+  display: flex;
+  padding: 0px 20p;
+  margin: 50px 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.list {
+  font-size: xx-large;
+  font-weight: 600;
+  font-style: italic;
+  text-shadow: 2px 2px #ff0000;
+  list-style: none;
+  color: purple;
+  text-transform: capitalize;
+}
+.body__todo > button {
+  margin-right: 20px;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 10px 10px 8px #888888;
+  background-color: lightpink;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  outline-style: none;
+  perspective: 100px;
+}

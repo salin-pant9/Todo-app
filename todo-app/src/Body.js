@@ -1,22 +1,20 @@
-import { Avatar, List, ListItem, ListItemAvatar, ListItemText } from '@material-ui/core';
+
 import React from 'react';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import DeleteIcon from '@material-ui/icons/Delete';
+
 import './Body.css'; 
-function Body({todo}) {
-    const date = new Date();
+import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';
+function Body({ todo,id,deleteItem }) {
+    
+    
     return (
-        <List>
-            <ListItem>
-            <ListItemAvatar>
-                
-                <ArrowForwardIcon style={{color:'black'}} />
-               
-            </ListItemAvatar>
-            <ListItemText style={{fontWeight:'bold'}} primary={todo} />
-            </ListItem>
-            <DeleteIcon/>
-        </List>
+        <> 
+            <div className="body__todo">
+                <ArrowForwardIosOutlinedIcon style={{color:'purple'}}/>
+                <li className="list">{todo}</li>
+                <button onClick={() => deleteItem(id)}>Delete</button>
+
+            </div>
+        </>
     )
 }
 

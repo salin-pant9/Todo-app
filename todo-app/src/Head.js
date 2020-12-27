@@ -5,23 +5,26 @@ import './Head.css';
 function Head() {
     const [input , setInput] = useState('');
     const [todos,setTodos] = useState([]);
-    const todos1 = todos.reverse();
-    
-    console.log(todos.length-1);
+   
     const post = (e) => {
         e.preventDefault();
         setTodos([...todos,input]);
         setInput('');
         
     }
+    const deleteItem = (id) => (
+        setTodos((todos) => (
+            todos.filter((arrElem,index) => index !== id)
+        ))
+    )
     return (
         <div>
 
             <div className="head">
                 <h1>TODO APP</h1>
                 <form >
-                    <input value={input} onChange={(e) => setInput(e.target.value)} placeholder='Enter the todos' type="text"/>
-                    <button onClick={post} type='submit'>Click here</button>
+                    <input  value={input} onChange={(e) => setInput(e.target.value)} placeholder='Enter the todos....' type="text"/>
+                    <button  onClick={post} type='submit'>Click here</button>
                     
                 </form>
                 <div className="head__icon">
@@ -30,10 +33,8 @@ function Head() {
             
             </div>
                
-               
-                {todos1.map((todo) => (
-                    <Body todo={todo} />
-                ))}
+            {todos.map((todo,index) => <Body key={index} deleteItem={deleteItem} id={index} todo={todo} />)}   
+                
                 
     
         </div>
